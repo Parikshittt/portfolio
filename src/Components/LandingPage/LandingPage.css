@@ -48,6 +48,17 @@
   width: 70%;
 }
 
+.skillsBody {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.skillsGroup {
+  display: flex;
+  gap: 10px;
+}
+
 .sectionContent {
   margin-top: 0px;
 }

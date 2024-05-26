@@ -9,7 +9,12 @@ import EducationItem from './EducationItem';
 import ThaparLogo from '../../assets/thapar.png'
 import dcmLogo from '../../assets/DCM.png'
 import dpsLogo from '../../assets/DPS.jpeg'
-import { useActionData } from 'react-router-dom';
+import jsLogo from '../../assets/JS.png'
+import htmlLogo from '../../assets/HTML.png'
+import cssLogo from '../../assets/css.png'
+import angularLogo from '../../assets/angular.png'
+import reactLogo from '../../assets/reactLogo.svg'
+import { Tooltip } from '@mui/material';
 
 
 function LandingPage() {
@@ -139,6 +144,33 @@ function LandingPage() {
                                 />
                             ))}
                         </div>
+                    </div>
+                </div>
+
+                <div id="educationSection" className='experienceSection'>
+                    <div className='bulletPoint'></div>
+                    <div className='skillsBody'>
+                        <h1 className='title'>Skills</h1>
+                        <div className='skillsGroup'>
+                            <Tooltip title="HTML">
+                                <img style={{ width: 40 }} src={htmlLogo} />
+                            </Tooltip>
+                            <Tooltip title="CSS">
+                                <img style={{ width: 40 }} src={cssLogo} />
+                            </Tooltip>
+                            <Tooltip title="JavaScript">
+                                <img style={{ width: 40 }} src={jsLogo} />
+                            </Tooltip>
+                            <Tooltip title="Angular">
+                                <img style={{ width: 40 }} src={angularLogo} />
+                            </Tooltip>
+                            <Tooltip title="React">
+                                <img style={{ width: 40 }} src={reactLogo} />
+                            </Tooltip>
+
+                        </div>
+
+
                     </div>
                 </div>
 
