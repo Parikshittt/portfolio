@@ -5,7 +5,7 @@ function About() {
             <div className='contentBody'>
                 <h1 className='title'>About</h1>
                 <p className='sectionContent'>
-                    I am a tech-savvy person driven by curiosity. I have extensive job experience in Angular development and some experience in React as well (this website is made using React JS).
+                    I am a tech-savvy person driven by curiosity. I have extensive job experience in Angular development and some experience in React as well <span style={{ fontWeight: 'bold', color: 'purple' }}>(this website is made using React JS)</span>.
                 </p>
                 <p className='sectionContent'>
                     Over the past 1.5 years, I’ve realized that technical knowledge is always available on the internet, and I am equally proficient in it as any other employee in my current or future organizations.
