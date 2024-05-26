@@ -1,0 +1,108 @@
+.header {
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  padding-left: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 5px solid black;
+  z-index: 999;
+}
+
+.headerLeft {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.headerRightHireMe {
+  margin-right: 50px;
+
+  width: 100px;
+  display: flex;
+  background-color: #0085ff;
+  height: 60px;
+  border-radius: 15px;
+  color: white;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerRightMenuIcon {
+  display: none;
+}
+
+.profilePic {
+  width: 60px;
+  height: 60px;
+  aspect-ratio: 1;
+  border: 3px solid black;
+  border-radius: 100%;
+}
+
+.headerRightHireMePhone {
+  z-index: 999;
+  width: 100px;
+  position: fixed;
+  background-color: #0085ff;
+  height: 60px;
+  border-radius: 15px;
+  color: white;
+  bottom: 20px;
+  right: 20px;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.sidePanelPhone {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  top: -40px;
+  left: 0px;
+  right: 0px;
+  background-color: white;
+  transition: top 0.3s ease-in-out;
+}
+
+.sidePanelPhone.menuOpen {
+  transition: top 0.3s ease-in-out;
+  top: 70px;
+}
+@media screen and (max-width: 640px) {
+  .headerLeft button {
+    display: none;
+  }
+
+  .headerRightHireMe {
+    margin-right: 40px;
+    width: 60px;
+    height: 60px;
+    display: none;
+  }
+
+  .headerRightMenuIcon {
+    margin-right: 20px;
+    background-color: #0085ff;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .headerRightHireMePhone {
+    display: flex;
+  }
+
+  .sidePanelPhone {
+    display: flex;
+  }
+}
