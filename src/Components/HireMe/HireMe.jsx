@@ -52,7 +52,6 @@ function HireMe() {
                 });
                 Navigate.nai
             }, (error) => {
-                console.log('Failed to send email.', error.text);
                 toast.error('Failed to send email.', {
                     position: "top-right",
                     marginTop: 700,

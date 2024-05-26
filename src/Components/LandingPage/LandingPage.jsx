@@ -21,7 +21,6 @@ function LandingPage() {
     const [menu, setMenu] = useState(false);
     function openCloseMenu() {
         setMenu((menu) => !menu)
-        console.log('menu open', menu)
     }
     const experiences = [
         {
@@ -94,6 +93,17 @@ function LandingPage() {
         openCloseMenu();
     }
 
+    function scrollToSkills() {
+        const section = document.getElementById('skillsSection');
+        section.scrollIntoView({ behavior: 'smooth' });
+        openCloseMenu();
+        navigator.clipboard.writeText('7837615955')
+    }
+
+    function CopyNumber() {
+        navigator.clipboard.writeText('7837615955')
+    }
+
     return (
         <>
             <Header
@@ -102,6 +112,8 @@ function LandingPage() {
                 clickToEdu={scrollToEdu}
                 menuValue={menu}
                 openCloseMenu={openCloseMenu}
+                clickToSkills={scrollToSkills}
+                copyNumberProp={CopyNumber}
             />
             <div className='storyLine'></div>
             <div className='content'>
@@ -147,7 +159,7 @@ function LandingPage() {
                     </div>
                 </div>
 
-                <div id="educationSection" className='experienceSection'>
+                <div id="skillsSection" className='experienceSection'>
                     <div className='bulletPoint'></div>
                     <div className='skillsBody'>
                         <h1 className='title'>Skills</h1>

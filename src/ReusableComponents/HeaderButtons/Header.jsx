@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import './Header.css'
 import profilePic from '../../../public/profile-pic.png';
 import menuIcon from '../../assets/menuIcon.svg'
-import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-function Header({ clickToAbout, clickToExp, clickToEdu, menuValue, openCloseMenu }) {
+import { toast } from "react-toastify";
+import callme from '../../assets/callMe.svg'
+import email from '../../assets/email.svg'
+function Header({ clickToAbout, clickToExp, clickToEdu, clickToSkills, menuValue, openCloseMenu, CopyNumber }) {
     const navigate = useNavigate();
     const isOnHireMePage = location.pathname === '/hireme';
     return (
@@ -12,23 +14,26 @@ function Header({ clickToAbout, clickToExp, clickToEdu, menuValue, openCloseMenu
             <header className="header">
                 <div className="headerLeft">
                     <img src={profilePic} className="profilePic" />
-                    <button style={{ background: 'none', border: 'none', fontSize: 20, fontWeight: 'bold' }} onClick={clickToAbout}>About</button>
-                    <button style={{ background: 'none', border: 'none', fontSize: 20, fontWeight: 'bold' }} onClick={clickToExp}>Experience</button>
-                    <button style={{ background: 'none', border: 'none', fontSize: 20, fontWeight: 'bold' }} onClick={clickToEdu}>Education</button>
-                    <button style={{ background: 'none', border: 'none', fontSize: 20, fontWeight: 'bold' }}>Projects</button>
+                    {!isOnHireMePage && <button style={{ background: 'none', border: 'none', fontSize: 20, fontWeight: 'bold' }} onClick={clickToAbout}>About</button>}
+                    {!isOnHireMePage && <button style={{ background: 'none', border: 'none', fontSize: 20, fontWeight: 'bold' }} onClick={clickToExp}>Experience</button>}
+                    {!isOnHireMePage && <button style={{ background: 'none', border: 'none', fontSize: 20, fontWeight: 'bold' }} onClick={clickToEdu}>Education</button>}
+                    {!isOnHireMePage && <button style={{ background: 'none', border: 'none', fontSize: 20, fontWeight: 'bold' }} onClick={clickToSkills}>Skills</button>}
+                    {isOnHireMePage && <img src={callme} className="callMe" onClick={() => { navigator.clipboard.writeText('7837615955'); toast.success('Successfully Copied Phone Number') }} />}
+                    {isOnHireMePage && <img src={email} className="callMe" onClick={() => { navigator.clipboard.writeText('parikshitsingh1104@gmail.com'); toast.success('Successfully Copied E-mail') }} />}
+
                 </div>
                 {!isOnHireMePage && <button className="headerRightHireMe" onClick={() => navigate('/hireme')}>
                     <p>Hire Me</p>
                 </button>}
-                <button className="headerRightMenuIcon" onClick={openCloseMenu}>
+                {!isOnHireMePage && <button className="headerRightMenuIcon" onClick={openCloseMenu}>
                     <img style={{ width: 30 }} src={menuIcon} />
-                </button>
+                </button>}
             </header>
             <div className={menuValue ? 'sidePanelPhone  menuOpen' : 'sidePanelPhone'}>
                 <button style={{ background: 'none', border: 'none', fontSize: 20, fontWeight: 'bold' }} onClick={clickToAbout}>About</button>
                 <button style={{ background: 'none', border: 'none', fontSize: 20, fontWeight: 'bold' }} onClick={clickToExp}>Experience</button>
                 <button style={{ background: 'none', border: 'none', fontSize: 20, fontWeight: 'bold' }} onClick={clickToEdu}>Education</button>
-                <button style={{ background: 'none', border: 'none', fontSize: 20, fontWeight: 'bold' }}>Projects</button>
+                <button style={{ background: 'none', border: 'none', fontSize: 20, fontWeight: 'bold' }} onClick={clickToSkills}>Skills</button>
             </div>
             {!isOnHireMePage && <button className="headerRightHireMePhone" onClick={() => navigate('/hireme')}>
                 <p>Hire Me</p>
