@@ -15,6 +15,7 @@ import cssLogo from '../../assets/css.png'
 import angularLogo from '../../assets/angular.png'
 import reactLogo from '../../assets/reactLogo.svg'
 import { Tooltip } from '@mui/material';
+import flutterLogo from '../../assets/flutterLogo.jpg'
 
 
 function LandingPage() {
@@ -97,7 +98,6 @@ function LandingPage() {
         const section = document.getElementById('skillsSection');
         section.scrollIntoView({ behavior: 'smooth' });
         openCloseMenu();
-        navigator.clipboard.writeText('7837615955')
     }
 
     function CopyNumber() {
@@ -179,7 +179,9 @@ function LandingPage() {
                             <Tooltip title="React">
                                 <img style={{ width: 40 }} src={reactLogo} />
                             </Tooltip>
-
+                            <Tooltip title="Flutter">
+                                <img style={{ width: 40 }} src={flutterLogo} />
+                            </Tooltip>
                         </div>
 
 
